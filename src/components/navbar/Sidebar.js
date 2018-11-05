@@ -17,5 +17,5 @@ const Sidebar = ({ toggleMenu, isOpen }) => {
 }
 
 export default connect(function(state) {
-  return { isOpen: state.open }
+  return { isOpen: state.app.open }
 }, { toggleMenu })(Sidebar);
