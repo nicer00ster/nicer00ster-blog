@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  background: $footerSVG;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #999;
+  height: 250px;
+  margin-top: 1vw;
+  font-family: 'Courier Prime Sans';
+  &__links {
+    display: flex;
+    margin-top: auto;
+  }
+  &__trademark {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .footer {
+    margin-top: .5vw;
+    height: 12rem;
+  }
+}

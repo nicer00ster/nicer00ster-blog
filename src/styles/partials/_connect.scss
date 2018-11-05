@@ -1,0 +1,83 @@
+.connect__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier Prime Sans';
+    border: 1px solid #999;
+    margin: 1rem;
+    width: 50%;
+    background: $footerSVG;
+    box-shadow: $boxshad;
+    &-header {
+      font-family: 'Squada One', cursive;
+      color: #333;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 25px;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-shadow:
+        1px 1px 0px #FFF,
+        2px 2px 0px #999,
+        3px 3px 0px #FFF;
+      &_text {
+        letter-spacing: 4px;
+        font-weight: 800;
+        background: #fff;
+        padding: 2px 10px;
+        color: #555;
+        font-size: 45px;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1;
+        text-shadow:
+              1px 1px 0px #fff,
+              2px 2px 0px #999,
+              3px 3px 0px #fff;
+        background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.05) 100%);
+        background-image: -webkit-linear-gradient(left top,
+            transparent 0%, transparent 25%,
+            rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%,
+            transparent 50%, transparent 75%,
+            rgba(0,0,0,.15) 75%);
+        background-size: 4px 4px;
+        box-shadow:
+            0 0 0 1px rgba(0,0,0,.4) inset,
+            0 0 20px -5px rgba(0,0,0,.4),
+            0 0 0px 3px #fff inset;
+      }
+    }
+  }
+  &--self {
+    flex: 2;
+    margin: 1rem;
+    border: 1px solid #999;
+  }
+}
+@media all and (max-width: 850px) {
+  .connect__wrapper {
+    &--form {
+      transform: scale(.9);
+    }
+    &--self {
+      display: none;
+    }
+  }
+}
+@media all and (max-width: 600px) {
+  .connect__wrapper {
+    &--form {
+      &-header {
+        width: 75%;
+      }
+    }
+    &--self {
+      display: none;
+    }
+  }
+}
