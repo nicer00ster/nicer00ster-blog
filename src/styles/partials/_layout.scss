@@ -43,6 +43,9 @@ body {
     max-height: 400px;
     transform: translateY(10rem);
   }
+  &__blog {
+    
+  }
 
   // Hero images for each page
   &__image--home {
@@ -54,6 +57,19 @@ body {
         max-width: 450px;
         min-width: 450px;
         max-height: auto;
+    }
+  }
+  &__image--blog {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    & img {
+        margin-left: 6rem;
+        width: 100%;
+        max-width: 300px;
+        min-width: 300px;
+        max-height: 800px;
+      	animation: float 5s ease-in-out infinite;
     }
   }
   &__image--work {
@@ -78,7 +94,7 @@ body {
       max-height: auto;
   }
 
-  &__home, &__work, &__connect {
+  &__home, &__work, &__connect, &__blog {
     display: flex;
     flex-direction: column;
     border: 1px solid #999;
@@ -218,7 +234,7 @@ body {
       margin-left: 1rem;
       margin-right: 1rem;
     }
-    &__home, &__work, &__connect {
+    &__home, &__work, &__connect, &__blog {
       max-width: 500px;
       &--content {
         & h2 {
@@ -232,10 +248,10 @@ body {
     flex-direction: column;
     margin: 0;
     .wrapper {
-      &__image--home, &__image--work, &__image--connect {
+      &__image--home, &__image--work, &__image--connect, &__image--blog {
         display: none;
       }
-      &__home, &__work, &__connect {
+      &__home, &__work, &__connect, &__blog {
         transform: none;
         width: 100%;
         min-width: 450px;
@@ -269,7 +285,7 @@ body {
   @media all and (max-width: 600px) {
     padding: 2rem;
     .wrapper {
-      &__home, &__work, &__connect {
+      &__home, &__work, &__connect, &__blog {
         margin-top: 4rem;
         min-width: 350px;
         &--header {
@@ -288,7 +304,7 @@ body {
     .wrapper {
       margin-left: 2rem;
       margin-right: 2rem;
-      &__home, &__work, &__connect {
+      &__home, &__work, &__connect, &__blog {
         &--skill {
           max-width: 300px;
           &-heading {

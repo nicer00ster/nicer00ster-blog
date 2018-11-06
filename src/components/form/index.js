@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filledSection } from '../../actions';
+import { withRouter } from "react-router-dom";
+import { filledSection, sendMail } from '../../actions';
 import Modal from 'react-responsive-modal';
 import Checkmark from './Checkmark';
 import Plane from '-!svg-react-loader?name=Plane!../../images/svg/send.svg';
-// import Router from 'next/router';
 import 'isomorphic-fetch';
 
 class Form extends React.Component {
@@ -21,8 +21,8 @@ class Form extends React.Component {
     }
   }
   submitForm(name, email, selected, message) {
-      fetch('/connect', {
-        method: 'post',
+      fetch('/contact', {
+        method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, /*/',
           'Content-Type': 'application/json'
@@ -64,14 +64,14 @@ class Form extends React.Component {
       setTimeout(resolve, 1000);
     }).then(() => {
       this.setState({ name: '', email: '', message: '', selected: '' })
-      // Router.push(`/connect#${status}`)
+      this.props.history.push(`/contact#${status}`)
       this.onOpenModal();
     }).then(() => {
       return new Promise(resolve => {
         setTimeout(resolve, 1750);
       }).then(() => {
         this.onCloseModal();
-        // Router.push('/connect')
+        this.props.history.push('/contact')
         this.setState({ fly: false })
       })
     })
@@ -91,10 +91,10 @@ class Form extends React.Component {
       <form
           className="form__container"
           method="POST"
-          action="/connect"
+          action="/contact"
           onSubmit={e => {
-            e.preventDefault()
-            this.submitForm(name, email, selected, message)
+            e.preventDefault();
+            this.submitForm(name, email, selected, message);
           }}>
         <label htmlFor="name"></label>
         <input
@@ -147,9 +147,10 @@ class Form extends React.Component {
   }
 }
 
-export default connect(function(state) {
+export default withRouter(connect(function(state) {
   return {
     filled: state.app.filled,
-    submitted: state.app.submitted
+    submitted: state.app.submitted,
+    sending: state.mail.sending,
    }
-}, { filledSection })(Form);
+}, { filledSection, sendMail })(Form));

@@ -1,4 +1,5 @@
 .wrapper__home--header-text,
+.wrapper__blog--header-text,
 .wrapper__work--header-text,
 .wrapper__connect--header-text {
   display: flex;
@@ -28,6 +29,8 @@
 }
 .wrapper__home--header-text h1,
 .wrapper__home--header-text h5,
+.wrapper__blog--header-text h1,
+.wrapper__blog--header-text h5,
 .wrapper__work--header-text h1,
 .wrapper__work--header-text h5,
 .wrapper__connect--header-text h1,
@@ -37,6 +40,7 @@
 }
 .wrapper__home--header-text h1,
 .wrapper__work--header-text h1,
+.wrapper__blog--header-text h1,
 .wrapper__connect--header-text h1 {
     width: 255px;
     letter-spacing: 4px;
@@ -69,6 +73,7 @@
 }
 .wrapper__home--header-text h1:after,
 .wrapper__work--header-text h1:after,
+.wrapper__blog--header-text h1:after,
 .wrapper__connect--header-text h1:after {
   content: '';
   position: absolute;
@@ -90,6 +95,7 @@
 }
 .wrapper__home--header-text i,
 .wrapper__work--header-text i,
+.wrapper__blog--header-text i,
 .wrapper__connect--header-text i {
   font-size: 4.8em;
   color: #000;

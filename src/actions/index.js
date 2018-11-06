@@ -17,3 +17,13 @@ export function filledSection() {
     type: types.SECTION_FILLED
   };
 }
+
+export function sendMail(name, email, selected, message) {
+  return {
+    type: types.SEND_MAIL,
+    name,
+    email,
+    selected,
+    message,
+  };
+}

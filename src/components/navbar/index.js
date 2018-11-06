@@ -32,6 +32,14 @@ const Navbar = ({ isOpen, toggleMenu }) => {
               </Link>
             </li>
             <li className="navbar__item" onClick={ toggleMenu }>
+              <Link activeClassName="active" to="/blog">
+                <a className="navbar__link">
+                  <Telephone className="navbar__item--svg" width={100} height={50} />
+                  <span className="navbar__item--text">Blog</span>
+                </a>
+              </Link>
+            </li>
+            <li className="navbar__item" onClick={ toggleMenu }>
               <Link activeClassName="active" to="/work">
                 <a className="navbar__link">
                   <Smartphone className="navbar__item--svg" width={100} height={50} />
