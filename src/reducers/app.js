@@ -14,6 +14,16 @@ export default function appReducer(state = initialState, action = {}) {
         ...state,
         open: !state.open,
       };
+    case types.TOGGLE_TERMINAL:
+      return {
+        ...state,
+        terminal: !state.terminal,
+      };
+    case types.SECTION_FILLED:
+      return {
+        ...state,
+        filled: !state.filled,
+      };
     default:
       return state;
   }

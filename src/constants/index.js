@@ -1,1 +1,3 @@
 export const TOGGLE_MENU = 'TOGGLE_MENU';
+export const TOGGLE_TERMINAL = 'TOGGLE_TERMINAL';
+export const SECTION_FILLED = 'SECTION_FILLED';

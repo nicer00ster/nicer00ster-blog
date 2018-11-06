@@ -1,5 +1,6 @@
 body, html {
   font-size: 16px;
+  font-family: 'Squada One';
   background: linear-gradient(to bottom right, #fbd786, #c6ffdd, #f7797d);
   background: #efefef;
   overflow-x: hidden;
@@ -11,7 +12,6 @@ body {
   background-image: $topSVG;
   background-color: #e0f1ff;
 }
-
 
 .seperator {
   height: 100px;
@@ -48,6 +48,7 @@ body {
   &__image--home {
     display: flex;
     align-items: flex-end;
+    width: 100%;
     & img {
         width: 100%;
         max-width: 450px;
@@ -58,8 +59,9 @@ body {
   &__image--work {
     display: flex;
     align-items: flex-end;
+    width: 100%;
     & img {
-        margin-right: 4rem;
+        margin-left: 6rem;
         width: 100%;
         max-width: 300px;
         min-width: 300px;
@@ -99,7 +101,7 @@ body {
       background: repeating-linear-gradient(45deg, #62c6ef, #62c6ef 0%, #fff 2.5px, #fff 60px);
       transition: all .25s;
       & h2 {
-        margin: 2rem;
+        margin: 1rem;
         margin-top: 2rem;
         text-align:center;
         font-family: 'Squada One', cursive;

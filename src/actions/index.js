@@ -5,3 +5,15 @@ export function toggleMenu() {
     type: types.TOGGLE_MENU
   };
 }
+
+export function toggleTerminal() {
+  return {
+    type: types.TOGGLE_TERMINAL
+  };
+}
+
+export function filledSection() {
+  return {
+    type: types.SECTION_FILLED
+  };
+}

@@ -22,9 +22,17 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(png|woff|woff2|eot|ttf)$/,
         loader: 'url-loader?limit=100000'
-      }
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: require.resolve('svg-react-loader'),
+        options: {
+          xmlnsTest: /^xmlns.*$/
+        }
+      },
     ]
   },
   plugins: [new HtmlWebpackPlugin({

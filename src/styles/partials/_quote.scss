@@ -1,7 +1,9 @@
 .quote__wrapper {
   position: relative;
   height: 100%;
+  border: 1px solid #999;
   background: $footerSVG;
+  box-shadow: $boxshad;
   &--section {
     margin: 0 auto;
     padding: 20px;

@@ -5,20 +5,11 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
-import NProgress from 'nprogress';
 
 import Home from '../components/pages/home';
 import Work from '../components/pages/work';
 import Contact from '../components/pages/contact';
-
-Router.onRouteChangeStart = (url) => {
-  console.log(`Loading ${url}`)
-  NProgress.start();
-}
-
-Router.onRouteChangeComplete = () => NProgress.done();
-
-Router.onRouteChangeError = () => NProgress.done();
+import NotFound from '../components/pages/notfound';
 
 const Navigation = () => {
   return (
@@ -27,6 +18,7 @@ const Navigation = () => {
         <Route exact path="/" component={Home} />
         <Route path="/work/" component={Work} />
         <Route path="/contact/" component={Contact} />
+        <Route render={() => <NotFound />} />
       </Switch>
     </Router>
   )
