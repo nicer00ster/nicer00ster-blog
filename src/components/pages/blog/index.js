@@ -1,6 +1,8 @@
 import React from 'react';
 import NProgress from 'nprogress';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchBlogPosts } from '../../../actions';
 
 import Divider from '../../divider';
 import Footer from '../../footer';
@@ -12,6 +14,7 @@ class Blog extends React.Component {
   }
   componentDidMount() {
     NProgress.done();
+    this.props.fetchBlogPosts();
   }
   render() {
     return (
@@ -27,7 +30,7 @@ class Blog extends React.Component {
       <Divider />
       <div className="blog__wrapper">
         <div className="blog__wrapper--container">
-          
+
         </div>
       </div>
       <Divider />
@@ -37,4 +40,10 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+const mapStateToProps = ({ blog }) => ({
+  blog,
+});
+
+const mapDispatchToProps = { fetchBlogPosts };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);

@@ -27,3 +27,10 @@ export function sendMail(name, email, selected, message) {
     message,
   };
 }
+
+export function fetchBlogPosts() {
+  console.log('here i am');
+  return {
+    type: types.FETCH_BLOGS,
+  };
+}

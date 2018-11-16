@@ -26,7 +26,15 @@ function nodemailer(data) {
   });
 }
 
-function* sendMail(data) {
+function apiBlogPosts() {
+  return axios({
+    method: 'get',
+    url: 'http://drupal8.dd:8083/api/posts?_format=json',
+  })
+  .then(data => data);
+}
+
+function* sendMailSaga(data) {
   console.log('saga', data);
   yield delay(1250);
   const request = yield call(nodemailer, data);
@@ -35,12 +43,24 @@ function* sendMail(data) {
   try {
     yield put({ type: types.SEND_MAIL_SUCCESS, result });
   } catch (error) {
-    yield put({ types: types.SEND_MAIL_FAILURE, error });
+    yield put({ type: types.SEND_MAIL_FAILURE, error });
+  }
+}
+
+function* fetchBlogSagas(data) {
+  const request = yield call(apiBlogPosts);
+  const result = request.data;
+  console.log('saga', result);
+  try {
+    yield put({ type: types.FETCH_BLOGS_SUCCESS, result });
+  } catch (error) {
+    yield put({ type: types.FETCH_BLOGS_FAILURE, error });
   }
 }
 
 function* rootSaga() {
-  yield takeEvery(types.SEND_MAIL, sendMail);
+  yield takeEvery(types.SEND_MAIL, sendMailSaga);
+  yield takeEvery(types.FETCH_BLOGS, fetchBlogSagas);
 }
 
 export default rootSaga;
